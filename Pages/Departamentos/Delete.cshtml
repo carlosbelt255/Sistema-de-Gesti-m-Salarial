@@ -1,0 +1,42 @@
+﻿@page
+@model SistemaDeGestionSalarial.Pages.Departamentos.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar Departamento";
+}
+
+<h1 class="text-center my-4">Eliminar Departamento</h1>
+
+<div class="alert alert-warning text-center">
+    <h4>¿Estás seguro de que deseas eliminar este departamento?</h4>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-4">Nombre</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.Nombre)</dd>
+
+            <dt class="col-sm-4">Fecha de Creación</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.FechaCreacion)</dd>
+
+            <dt class="col-sm-4">Estado</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.Estado)</dd>
+
+            <dt class="col-sm-4">Creado Por</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.CreadoPor)</dd>
+
+            <dt class="col-sm-4">Modificado Por</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.ModificadoPor)</dd>
+
+            <dt class="col-sm-4">Fecha de Modificación</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.FechaModificacion)</dd>
+        </dl>
+
+        <form method="post" class="text-center">
+            <input type="hidden" asp-for="Departamento.DepartamentoID" />
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-lg" /> |
+            <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>

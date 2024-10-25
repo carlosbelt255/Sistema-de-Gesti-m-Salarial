@@ -1,0 +1,186 @@
+[
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AsociadosController",
+    "Method": "GetAsociados",
+    "RelativePath": "api/Asociados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AsociadosController",
+    "Method": "CreateAsociado",
+    "RelativePath": "api/Asociados",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "asociado",
+        "Type": "SistemaDeGestionSalarial.Models.Asociado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AsociadosController",
+    "Method": "GetAsociado",
+    "RelativePath": "api/Asociados/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AsociadosController",
+    "Method": "EditAsociado",
+    "RelativePath": "api/Asociados/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "asociado",
+        "Type": "SistemaDeGestionSalarial.Models.Asociado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AsociadosController",
+    "Method": "DeleteAsociado",
+    "RelativePath": "api/Asociados/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AumentosController",
+    "Method": "CalcularAumento",
+    "RelativePath": "api/Aumentos/CalcularAumento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SistemaDeGestionSalarial.Models.CalcularAumentoSalarioModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.AumentosController",
+    "Method": "ConsultarAumentos",
+    "RelativePath": "api/Aumentos/ConsultarAumentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.DepartamentosController",
+    "Method": "GetDepartamentos",
+    "RelativePath": "api/Departamentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.DepartamentosController",
+    "Method": "CreateDepartamento",
+    "RelativePath": "api/Departamentos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "departamento",
+        "Type": "Departamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.DepartamentosController",
+    "Method": "GetDepartamento",
+    "RelativePath": "api/Departamentos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.DepartamentosController",
+    "Method": "UpdateDepartamento",
+    "RelativePath": "api/Departamentos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "departamento",
+        "Type": "Departamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeGestionSalarial.Controllers.DepartamentosController",
+    "Method": "DeleteDepartamento",
+    "RelativePath": "api/Departamentos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

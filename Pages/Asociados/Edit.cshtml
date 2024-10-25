@@ -1,0 +1,113 @@
+﻿@page
+@model SistemaDeGestionSalarial.Pages.Asociados.EditModel
+
+@{
+    ViewData["Title"] = "Editar Asociado";
+}
+
+<h1 class="text-center my-4">Editar Asociado</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <input type="hidden" asp-for="Asociado.AsociadoID" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.Nombre" class="form-label">Nombre</label>
+                <input asp-for="Asociado.Nombre" class="form-control" />
+                <span asp-validation-for="Asociado.Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.Salario" class="form-label">Salario</label>
+                <input asp-for="Asociado.Salario" class="form-control" />
+                <span asp-validation-for="Asociado.Salario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.FechaIngreso" class="form-label">Fecha de Ingreso</label>
+                <input asp-for="Asociado.FechaIngreso" class="form-control" type="date" />
+                <span asp-validation-for="Asociado.FechaIngreso" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.Estado" class="form-label">Estado</label>
+                <select asp-for="Asociado.Estado" class="form-select">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+                <span asp-validation-for="Asociado.Estado" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.DepartamentoID" class="form-label">Departamento</label>
+                <select asp-for="Asociado.DepartamentoID" class="form-select" asp-items="ViewBag.DepartamentoID"></select>
+                <span asp-validation-for="Asociado.DepartamentoID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.FechaUltimoAumento" class="form-label">Fecha Último Aumento</label>
+                <input asp-for="Asociado.FechaUltimoAumento" class="form-control" type="date" />
+                <span asp-validation-for="Asociado.FechaUltimoAumento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.SalarioAnterior" class="form-label">Salario Anterior</label>
+                <input asp-for="Asociado.SalarioAnterior" class="form-control" />
+                <span asp-validation-for="Asociado.SalarioAnterior" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.CreadoPor" class="form-label">Creado Por</label>
+                <input asp-for="Asociado.CreadoPor" class="form-control" readonly />
+                <span asp-validation-for="Asociado.CreadoPor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.ModificadoPor" class="form-label">Modificado Por</label>
+                <input asp-for="Asociado.ModificadoPor" class="form-control" />
+                <span asp-validation-for="Asociado.ModificadoPor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Asociado.FechaModificacion" class="form-label">Fecha de Modificación</label>
+                <input asp-for="Asociado.FechaModificacion" class="form-control" type="date" readonly />
+                <span asp-validation-for="Asociado.FechaModificacion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" id="btn-edit" class="btn btn-primary btn-lg">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-page="./Index" class="btn btn-secondary">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.getElementById('btn-edit').addEventListener('click', function (event) {
+            event.preventDefault();
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡Se guardarán los cambios del asociado!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, guardar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.querySelector('form').submit();
+                }
+            })
+        });
+    </script>
+}

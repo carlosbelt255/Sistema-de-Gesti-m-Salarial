@@ -1,0 +1,52 @@
+﻿@page
+@model SistemaDeGestionSalarial.Pages.Asociados.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles del Asociado";
+}
+
+<h1 class="text-center my-4">Detalles del Asociado</h1>
+
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Información del Asociado</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Nombre</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.Nombre)</dd>
+
+            <dt class="col-sm-3">Salario</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.Salario)</dd>
+
+            <dt class="col-sm-3">Fecha de Ingreso</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.FechaIngreso)</dd>
+
+            <dt class="col-sm-3">Estado</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.Estado)</dd>
+
+            <dt class="col-sm-3">Fecha Último Aumento</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.FechaUltimoAumento)</dd>
+
+            <dt class="col-sm-3">Salario Anterior</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.SalarioAnterior)</dd>
+
+            <dt class="col-sm-3">Creado Por</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.CreadoPor)</dd>
+
+            <dt class="col-sm-3">Modificado Por</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.ModificadoPor)</dd>
+
+            <dt class="col-sm-3">Fecha de Modificación</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.FechaModificacion)</dd>
+
+            <dt class="col-sm-3">Departamento</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Asociado.Departamento.Nombre)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="text-center">
+    <a asp-page="./Edit" asp-route-id="@Model.Asociado.AsociadoID" class="btn btn-primary me-2">Editar</a>
+    <a asp-page="./Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,37 @@
+﻿@page
+@model SistemaDeGestionSalarial.Pages.Departamentos.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles del Departamento";
+}
+
+<h1 class="text-center my-4">Detalles del Departamento</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-4">Nombre</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.Nombre)</dd>
+
+            <dt class="col-sm-4">Fecha de Creación</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.FechaCreacion)</dd>
+
+            <dt class="col-sm-4">Estado</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.Estado)</dd>
+
+            <dt class="col-sm-4">Creado Por</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.CreadoPor)</dd>
+
+            <dt class="col-sm-4">Modificado Por</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.ModificadoPor)</dd>
+
+            <dt class="col-sm-4">Fecha de Modificación</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Departamento.FechaModificacion)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-page="./Edit" asp-route-id="@Model.Departamento.DepartamentoID" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

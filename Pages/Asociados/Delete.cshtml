@@ -1,0 +1,66 @@
+﻿@page
+@model SistemaDeGestionSalarial.Pages.Asociados.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar Asociado";
+}
+
+<h1 class="text-center my-4">Eliminar Asociado</h1>
+
+<div>
+    <h4>Asociado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Asociado.Nombre</dd>
+
+        <dt class="col-sm-2">Salario</dt>
+        <dd class="col-sm-10">@Model.Asociado.Salario</dd>
+
+        <dt class="col-sm-2">Fecha de Ingreso</dt>
+        <dd class="col-sm-10">@Model.Asociado.FechaIngreso.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Estado</dt>
+        <dd class="col-sm-10">@Model.Asociado.Estado</dd>
+
+        <dt class="col-sm-2">Departamento</dt>
+        <dd class="col-sm-10">@Model.Asociado.DepartamentoID</dd>
+
+        <dt class="col-sm-2">Creado Por</dt>
+        <dd class="col-sm-10">@Model.Asociado.CreadoPor</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Asociado.AsociadoID" />
+
+        <div class="form-group text-center">
+            <button type="button" id="btn-delete" class="btn btn-danger btn-lg">Eliminar</button>
+            <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.getElementById('btn-delete').addEventListener('click', function (event) {
+            event.preventDefault();
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esta acción!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.querySelector('form').submit();
+                }
+            })
+        });
+    </script>
+}
